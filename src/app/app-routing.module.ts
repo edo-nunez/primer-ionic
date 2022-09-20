@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 const routes: Routes = [
+  {path: '',
+  component: LandingPageComponent},
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-];
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(m =>m.AdminPageModule)
+  }
+]
 
 @NgModule({
   imports: [
